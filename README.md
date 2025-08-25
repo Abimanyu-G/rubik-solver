@@ -1,12 +1,13 @@
-# React + Vite
+🧩 Rubik's Cube Solver
+Welcome to the Rubik's Cube Solver! This is a simple, fun, and interactive web application designed to help you solve a virtual 3x3x3 Rubik's Cube. Whether you're a beginner learning the ropes or just looking for a quick and satisfying solution, this tool is for you.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ Features
+Interactive 3D Cube: A fully rotatable and interactive 3D model of a 3x3x3 cube.
 
-Currently, two official plugins are available:
+Intuitive Controls: Easily turn faces with simple mouse clicks or touch gestures.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Step-by-Step Solutions: Get a complete, step-by-step guide to solving any scrambled cube.
 
-## Expanding the ESLint configuration
+Clean and Modern UI: A sleek, user-friendly interface that makes the solving process fun and engaging.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Mobile-Friendly: Solve the cube on the go, as the website is fully responsive.
