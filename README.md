@@ -1,10 +1,8 @@
 🧩 Rubik's Cube Solver
+
 Welcome to the Rubik's Cube Solver! This is a simple, fun, and interactive web application designed to help you solve a virtual 3x3x3 Rubik's Cube. Whether you're a beginner learning the ropes or just looking for a quick and satisfying solution, this tool is for you.
 
- Features
-Interactive 3D Cube: A fully rotatable and interactive 3D model of a 3x3x3 cube.
-
-Intuitive Controls: Easily turn faces with simple mouse clicks or touch gestures.
+Features
 
 Step-by-Step Solutions: Get a complete, step-by-step guide to solving any scrambled cube.
 
