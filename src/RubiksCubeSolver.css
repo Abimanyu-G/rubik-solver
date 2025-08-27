@@ -1,0 +1,407 @@
+/* Rubik's Cube Solver Styles */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Main Container */
+.cube-solver-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #9333ea, #3b82f6, #1e40af);
+  padding: 1.5rem;
+}
+
+.main-wrapper {
+  max-width: 112rem; /* 7xl */
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Header Styles */
+.header {
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.header p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* Main Grid Layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Input Section */
+.input-section {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+/* Color Palette */
+.color-palette-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.color-palette-label {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.color-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.color-option {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #9ca3af;
+  transition: all 0.2s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option.active {
+  border-color: #10b981;
+  transform: scale(1.1);
+}
+
+/* Control Buttons */
+.control-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.control-button {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scramble-btn {
+  background: #ea580c;
+}
+
+.scramble-btn:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn {
+  background: #6b7280;
+}
+
+.reset-btn:hover {
+  background: #4b5563;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Cube Faces Grid */
+.faces-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cube-face {
+  margin-bottom: 1.5rem;
+}
+
+.face-label {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.face-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+  width: 9rem;
+  margin-bottom: 1rem;
+}
+
+.sticker {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid #1f2937;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.sticker:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Solve Button */
+.solve-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+}
+
+.solve-button:hover {
+  background: linear-gradient(90deg, #059669, #2563eb);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.solve-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Results Section */
+.results-section {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+/* Notation Guide */
+.notation-guide {
+  background: #dbeafe;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.notation-title {
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.notation-text {
+  color: #1e40af;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Error Message */
+.error-message {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-title {
+  font-weight: bold;
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+}
+
+.error-text {
+  color: #dc2626;
+}
+
+/* Solution Display */
+.solution-display {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 1rem;
+}
+
+.solution-title {
+  font-weight: bold;
+  color: #059669;
+  margin-bottom: 1rem;
+}
+
+.solution-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.solution-stats {
+  color: #059669;
+}
+
+.solution-moves {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #d1d5db;
+  font-family: 'Courier New', monospace;
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.solution-steps-title {
+  font-weight: 600;
+  color: #059669;
+  margin-bottom: 0.5rem;
+}
+
+.solution-steps {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+
+.solution-step {
+  color: #059669;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 0.25rem;
+}
+
+/* Placeholder */
+.solution-placeholder {
+  text-align: center;
+  padding: 3rem 0;
+  color: #6b7280;
+}
+
+.placeholder-icon {
+  font-size: 3.75rem;
+  margin-bottom: 1rem;
+}
+
+.placeholder-text {
+  font-size: 1.125rem;
+}
+
+/* Color Definitions */
+.color-white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.color-red {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.color-green {
+  background-color: #10b981;
+  color: #000000;
+}
+
+.color-yellow {
+  background-color: #eab308;
+  color: #000000;
+}
+
+.color-orange {
+  background-color: #f97316;
+  color: #000000;
+}
+
+.color-blue {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cube-solver-container {
+    padding: 1rem;
+  }
+  
+  .header {
+    padding: 1.5rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1.125rem;
+  }
+  
+  .main-grid {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .faces-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .control-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .color-palette {
+    justify-content: center;
+  }
+  
+  .face-grid {
+    width: 8rem;
+  }
+  
+  .sticker {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
