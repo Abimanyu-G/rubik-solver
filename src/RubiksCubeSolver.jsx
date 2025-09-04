@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useEffect } from 'react';
-import Cube from 'cubejs';  // ✅ import real cubejs solver
+import Cube from 'cubejs';  
+/* Rubik's Cube Solver Styles */
 import './RubiksCubeSolver.css';
 
 const RubiksCubeSolver = () => {
@@ -82,14 +83,8 @@ const RubiksCubeSolver = () => {
     return faceOrder.map(face => 
       cubeState[face].map(color => colorMap[color]).join('')
     ).join('');
-
-//   const faceOrder = ['U', 'R', 'F', 'D', 'L', 'B'];
-//   return faceOrder.map(face => cubeState[face].join('')).join('');
 };
   
-
-
-    // Scramble the cube with a random valid configuration
     // Scramble cube using cubejs
 const scrambleCube = () => {
   try {
@@ -211,24 +206,36 @@ useEffect(() => {
       )
     );
   };
+  
+  const getFaceLabel = (faceKey) => {
+  switch (faceKey) {
+    case "U": return "Top";
+    case "L": return "Left";
+    case "F": return "Front";
+    case "R": return "Right";
+    case "B": return "Back";
+    case "D": return "Bottom";
+    default: return "";
+  }
+};
 
   // Render a single face
   const renderFace = (faceName, faceColors) => {
     const faceLabels = {
-      U: '⬆️ Up (White)',
-      R: '➡️ Right (Red)',
-      F: '⬅️ Front (Green)',
-      D: '⬇️ Down (Yellow)',
-      L: '⬅️ Left (Orange)',
-      B: '⬅️ Back (Blue)',
+      U:'',
+      R: '',
+      F: '',
+      D: '',
+      L: '',
+      B: '',
     };
 
     return (
-      <div key={faceName} className="cube-face">
+      <div key={faceName} className="face-grid">
         <div className="face-label">
           {faceLabels[faceName]}
         </div>
-        <div className="face-grid">
+        <div className="sticker-grid">
           {faceColors.map((color, index) => (
             <div
               key={`${faceName}-${index}`}
@@ -236,7 +243,9 @@ useEffect(() => {
               onClick={() => updateSticker(faceName, index)}
               title={`${faceName}${index}: ${colors[color].name}`}
             >
-              {color}
+
+              {index === 4 ? getFaceLabel(faceName) : ""}
+              {/* {color} */}
             </div>
           ))}
         </div>
@@ -245,7 +254,7 @@ useEffect(() => {
   };
 
   return (
-    <div className="cube-solver-container">
+    // <div className="cube-solver-container">
       <div className="main-wrapper">
         {/* Header */}
         <div className="header">
@@ -299,11 +308,33 @@ useEffect(() => {
             </div>
 
             {/* Cube Faces */}
-            <div className="faces-grid">
-              {Object.entries(cubeState).map(([face, faceColors]) => 
-                renderFace(face, faceColors)
-              )}
+            <div className="cube-net">
+             <div className="cube-face top">
+              {renderFace('U', cubeState.U)}
             </div>
+
+             <div className="cube-face left">
+                  {renderFace('L', cubeState.L)}
+              </div>
+              
+              <div className="cube-face front">
+               {renderFace('F', cubeState.F)}
+              </div>
+  
+              <div className="cube-face right">
+               {renderFace('R', cubeState.R)}
+                </div>
+
+             <div className="cube-face back">
+              {renderFace('B', cubeState.B)}
+             </div>
+  
+             <div className="cube-face bottom">
+               {renderFace('D', cubeState.D)}
+                </div>
+                </div>
+
+
 
             {/* Solve Button */}
             <button
@@ -386,7 +417,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-    </div>
+  //</div>
   );
 };
 

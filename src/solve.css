@@ -1,0 +1,256 @@
+/* General App Layout */
+.solver-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header */
+.solver-header {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.solver-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-buttons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-buttons button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.header-buttons button:hover {
+  background: #059669;
+}
+
+/* Page Layout */
+.solver-body {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Left side */
+.controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-buttons button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background: #059669;
+}
+
+/* Cube Net Layout */
+.cube-net {
+ display: grid;
+  grid-template-areas:
+    ". top . ."
+    "left front right back"
+    ". bottom . .";
+  grid-template-columns: repeat(4, 120px); /* match face size */
+  grid-template-rows: repeat(3, 120px);
+  gap: 0; 
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.cube-face {
+  margin: 0;
+  padding: 0;
+  width: 120px;   /* 3 stickers × 40px */
+  height: 120px; 
+  border: solid .5px black;
+}
+
+.face-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #4b5563;
+}
+
+/* Sticker Grid */
+.face-grid {
+   display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: repeat(3, 40px);
+  gap: 0;               /* no spacing */
+  background: #000;      /* black grid background */
+  padding: 2px;   
+  
+}
+
+.sticker {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: white;
+  border: 1px solid #000; /* thin border just to separate */
+  border-radius: 0;       /* keep stickers square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* .sticker:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+} */
+
+/* Color Palette */
+.color-palette {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.color-option {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #6b7280;
+  transition: all 0.2s ease;
+}
+
+.color-option.active {
+  border: 3px solid #10b981;
+}
+
+/* Solve button */
+.solve-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.solve-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.solve-btn:hover:not(:disabled) {
+  background: #059669;
+}
+
+/* Right side - Solution */
+.solution-panel {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #1f2937;
+  height: fit-content;
+}
+
+.solution-panel h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Errors */
+.error-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+}
+
+/* Found Solution */
+.solution-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #059669;
+}
+
+.solution-moves {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #374151;
+  word-break: break-all;
+}
+
+/* Placeholder */
+.solution-placeholder {
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem 0;
+}
+
+.solution-placeholder .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Notation Guide */
+.notation-guide {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #1e40af;
+}
