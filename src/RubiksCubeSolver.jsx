@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Cube from 'cubejs';  
 /* Rubik's Cube Solver Styles */
 import './RubiksCubeSolver.css';
+import './solve.css'; // Additional styles
 
 const RubiksCubeSolver = () => {
   // Cube state - each face has 9 stickers
@@ -22,7 +23,7 @@ const RubiksCubeSolver = () => {
 
     useEffect(() => {
     Cube.initSolver();
-    console.log("Cube solver initialized ✅");
+    console.log("Cube solver initialized");
   }, []);
 
   // Color mappings
@@ -151,7 +152,7 @@ useEffect(() => {
 
     try {
       if (!validateCube()) {
-        throw new Error("Invalid cube configuration. Each color must appear exactly 9 times.");
+        throw new Error("Cube is Broken! Each color must appear exactly 9 times.");
       }
 
       const cubeString = cubeToString();
@@ -163,7 +164,7 @@ useEffect(() => {
 
       if (cube.isSolved()) {
         setSolution({
-          moves: "Cube is already solved! 🎉",
+          moves: "Bruh It's already solved! 🐱‍🐉",
           steps: [],
           totalMoves: 0,
         });
@@ -209,12 +210,12 @@ useEffect(() => {
   
   const getFaceLabel = (faceKey) => {
   switch (faceKey) {
-    case "U": return "Top";
-    case "L": return "Left";
-    case "F": return "Front";
-    case "R": return "Right";
-    case "B": return "Back";
-    case "D": return "Bottom";
+    case "U": return "TOP";
+    case "L": return "LEFT";
+    case "F": return "FRONT";
+    case "R": return "RIGHT";
+    case "B": return "BACK";
+    case "D": return "BOTTOM";
     default: return "";
   }
 };
@@ -258,53 +259,41 @@ useEffect(() => {
       <div className="main-wrapper">
         {/* Header */}
         <div className="header">
-          <h1>🎲 Rubik's Cube Solver</h1>
-          <p>Configure your cube and get the solution</p>
-          {isCubeSolved() && (
+          <h1>Rubik's Cube Solver</h1>
+          <p>Easy Cube!</p>
+          {/* {isCubeSolved() && (
             <div style={{marginTop: '10px', fontSize: '1.2em'}}>
               ✅ Cube is in solved state!
             </div>
-          )}
+          )} */}
         </div>
 
         <div className="main-grid">
           {/* Input Section */}
           <div className="input-section">
-            <h2 className="section-title">Cube Configuration</h2>
+            {/* <h2 className="section-title">Cube Configuration</h2> */}
             
-            {/* Color Palette */}
-            <div className="color-palette-wrapper">
-              <p className="color-palette-label">Select Color:</p>
-              <div className="color-palette">
-                {Object.entries(colors).map(([colorKey, colorData]) => (
-                  <div
-                    key={colorKey}
-                    className={`color-option ${colors[colorKey].className} ${
-                      selectedColor === colorKey ? 'active' : ''
-                    }`}
-                    onClick={() => setSelectedColor(colorKey)}
-                    title={colorData.name}
-                  />
-                ))}
-              </div>
-            </div>
+            
 
             {/* Control Buttons */}
             <div className="control-buttons">
               <button
                 onClick={scrambleCube}
-                className="control-button scramble-btn"
+                // className="control-button scramble-btn"
+                className ="noir-btn noir-btn-default"
                 title="Generate a random scrambled configuration"
-              >
-                🎲 Scramble
-              </button>
+              >Scramble</button>
+
+
               <button
                 onClick={resetCube}
-                className="control-button reset-btn"
+                // className="control-button reset-btn"
+                className='noir-btnn noir-btn-default'
                 title="Reset to solved state"
-              >
-                🔄 Reset
+              >Reset
               </button>
+
+
             </div>
 
             {/* Cube Faces */}
@@ -334,6 +323,23 @@ useEffect(() => {
                 </div>
                 </div>
 
+             {/* Color Palette */}
+             <div className="color-palette-wrapper">
+              <p className="color-palette-label">Select Color:</p>
+              <div className="color-palette">
+                {Object.entries(colors).map(([colorKey, colorData]) => (
+                  <div
+                    key={colorKey}
+                    className={`color-option ${colors[colorKey].className} ${
+                      selectedColor === colorKey ? 'active' : ''
+                    }`}
+                    onClick={() => setSelectedColor(colorKey)}
+                    title={colorData.name}
+                  />
+                ))}
+              </div>
+            </div>
+
 
 
             {/* Solve Button */}
@@ -343,7 +349,7 @@ useEffect(() => {
               className="solve-button"
               title="Find solution for current cube configuration"
             >
-              {isLoading ? '🔄 Solving...' : '🧩 Solve Cube'}
+              {isLoading ? ' Solving...' : 'Solve Cube'}
             </button>
           </div>
 
@@ -353,42 +359,42 @@ useEffect(() => {
 
             {/* Cube Notation Info */}
             <div className="notation-guide">
-              <h4 className="notation-title">📚 Notation Guide</h4>
-              <p className="notation-text">
-                <strong>F</strong> = Front, <strong>B</strong> = Back, <strong>R</strong> = Right, 
-                <strong>L</strong> = Left, <strong>U</strong> = Up, <strong>D</strong> = Down<br/>
-                <strong>'</strong> = Counter-clockwise, <strong>2</strong> = 180° turn
-              </p>
+              <h4 className="notation-title">Solution Guide</h4>
+              <h6 className="notation-text">
+                F = Front, B = Back,R = Right, 
+                L = Left, U = Up, D = Down ||  
+                ' = Counter-clockwise, 2 = 180° turn
+              </h6>
             </div>
 
             {/* Error Display */}
             {error && (
               <div className="error-message">
-                <h3 className="error-title">❌ Error</h3>
+                <h3 className="error-title">Error</h3>
                 <p className="error-text">{error}</p>
-                <div style={{marginTop: '10px', fontSize: '0.9em', opacity: '0.8'}}>
-                  💡 Try resetting the cube or check the console for more details
-                </div>
+                {/* <div style={{marginTop: '10px', fontSize: '0.9em', opacity: '0.8'}}>
+                  Try resetting the cube or check the console for more details
+                </div> */}
               </div>
             )}
 
             {/* Solution Display */}
             {solution && (
               <div className="solution-display">
-                <h3 className="solution-title">✅ Solution Found!</h3>
+                <h3 className="solution-title">Solution Found :)</h3>
                 <div className="solution-content">
                   <p className="solution-stats">
                     <strong>Total moves:</strong> {solution.totalMoves}
                   </p>
                   <div>
-                    <p className="solution-steps-title">Algorithm:</p>
+                    {/* <p className="solution-steps-title">Moves:</p> */}
                     <div className="solution-moves">
                       {solution.moves}
                     </div>
                   </div>
                   {solution.steps && solution.steps.length > 0 && (
                     <div>
-                      <p className="solution-steps-title">Step by step:</p>
+                      <p className="solution-steps-title">Follow the Steps to Solve:</p>
                       <ol className="solution-steps">
                         {solution.steps.map((step, index) => (
                           <li key={index} className="solution-step">
@@ -405,12 +411,14 @@ useEffect(() => {
             {/* Placeholder when no solution */}
             {!solution && !error && !isLoading && (
               <div className="solution-placeholder">
-                <div className="placeholder-icon">🎲</div>
-                <p className="placeholder-text">
+                <div className="placeholder-icon">
+                  <img src="rubLogo.png" alt="cube"/>
+                </div>
+                {/* <p className="placeholder-text">
                   Configure your cube and click "Solve Cube" to get the solution
-                </p>
-                <div style={{marginTop: '15px', fontSize: '0.9em', opacity: '0.7'}}>
-                  💡 Start by clicking "Scramble" to create a solvable puzzle, or manually configure your cube colors
+                </p> */}
+                <div style={{marginTop: '15px', fontSize: '0.9em', opacity: '0.7', color: '#ffffff'}}>
+                  Click "Scramble" to create a solvable puzzle, or manually configure your cube colors
                 </div>
               </div>
             )}
