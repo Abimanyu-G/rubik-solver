@@ -88,6 +88,7 @@ const RubiksCubeSolver = () => {
   
     // Scramble cube using cubejs
 const scrambleCube = () => {
+  console.log("Scramble button clicked");
   try {
     const cube = new Cube(); // start from solved
     cube.randomize();        // apply random scramble
@@ -125,6 +126,7 @@ const scrambleCube = () => {
 
   // Reset to solved state
 const resetCube = () => {
+  console.log("Reset button clicked");
   setCubeState({
     U: Array(9).fill('W'), // Up face
     R: Array(9).fill('R'), // Right face
@@ -215,7 +217,7 @@ useEffect(() => {
     case "F": return "FRONT";
     case "R": return "RIGHT";
     case "B": return "BACK";
-    case "D": return "BOTTOM";
+    case "D": return "DOWN";
     default: return "";
   }
 };
@@ -233,23 +235,24 @@ useEffect(() => {
 
     return (
       <div key={faceName} className="face-grid">
-        <div className="face-label">
-          {faceLabels[faceName]}
+      <div className="face-label">
+        {faceLabels[faceName]}
+      </div>
+      <div className="sticker-grid">
+        {faceColors.map((color, index) => (
+        <div
+          key={`${faceName}-${index}`}
+          className={`sticker ${colors[color].className} ${index === 4 ? 'sticker-center' : ''}`}
+          onClick={() => updateSticker(faceName, index)}
+          title={`${faceName}${index}: ${colors[color].name}`}
+        >
+          {index === 4 ? (
+          <span className="face-center-label">{getFaceLabel(faceName)}</span>
+          ) : ""}
+          {/* {color} */}
         </div>
-        <div className="sticker-grid">
-          {faceColors.map((color, index) => (
-            <div
-              key={`${faceName}-${index}`}
-              className={`sticker ${colors[color].className}`}
-              onClick={() => updateSticker(faceName, index)}
-              title={`${faceName}${index}: ${colors[color].name}`}
-            >
-
-              {index === 4 ? getFaceLabel(faceName) : ""}
-              {/* {color} */}
-            </div>
-          ))}
-        </div>
+        ))}
+      </div>
       </div>
     );
   };

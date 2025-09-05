@@ -1,7 +1,9 @@
 function Head() {
   return (
     <>
-    <h1>Rubik's Cube Solver</h1>
+    <h5 style={{ textAlign: "center", color: "grey" }}>
+      Made by Abimanyu and why are you readin this
+    </h5>
     </>
   );
 }
