@@ -462,11 +462,16 @@ body {
 
 /* Mobile Layout Fix - Stack everything vertically */
 @media (max-width: 768px) {
+  body, html{
+    overflow: auto !important;
+    width: 100%;
+  }
   .main-grid {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto;
     gap: 1rem;
     padding: 1rem;
+    min-width: max-content;
   }
   
   .input-section {
@@ -480,13 +485,15 @@ body {
     min-height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
-    overflow: auto !important;
+    
     
   }
   .results-section {
     order: 2;
     width: 100%;
     margin-top: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
   }
   
   /* Fix cube net positioning */
@@ -554,7 +561,7 @@ body {
     bottom: 0;
     margin: 0 auto;
     box-sizing: border-box;
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
 
   .detailed-steps img {
