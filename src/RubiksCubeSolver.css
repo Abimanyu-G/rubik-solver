@@ -460,187 +460,160 @@ body {
 /* Responsive Design */
 /* ===== FIXED MOBILE RESPONSIVE CSS ===== */
 
-/* Mobile Layout Fix - Stack everything vertically */
-@media (max-width: 768px) {
-  body, html{
-    overflow: auto !important;
-    width: 100%;
-  }
-  .main-grid {
+@media (max-width: 768px) { 
+ 
+  .main-grid { 
     grid-template-columns: 1fr !important;
-    grid-template-rows: auto auto;
-    gap: 1rem;
-    padding: 1rem;
-    min-width: max-content;
-  }
-  
-  .input-section {
-    position: static !important;
-    top: 0 !important;
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    
-    
-  }
-  .results-section {
-    order: 2;
-    width: 100%;
-    margin-top: 2rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; 
-  }
-  
-  /* Fix cube net positioning */
-  .cube-net {
-    position: relative !important;
-    bottom: 0px ;
-    top: -105px;
-    transform: scale(0.7);
-    margin: 1rem 0;
-    order: 2;
-    
-  }
-  
-  /* Control buttons above cube */
-  .control-buttons {
-    order: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
-    height: auto !important;
-    width: auto !important;
-    position: relative;
-    right: 15px ;
-    
-  }
-  .noir-btn, .noir-btnn {
-    position: static !important;
-    right: auto !important;
-    top: auto !important;
-    margin-bottom: 10px;
-    /* margin: 0; */
-  }
-  
-  /* Color palette below cube */
-  .color-palette-wrapper {
-    order: 3;
-    position: relative !important;
-    bottom: 0 !important;
-    top: -225px;
-    margin: 1rem 0;
-  }
-  
-  /* Solve button below color palette */
-  .solve-button {
-    order: 4;
-    position: relative !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    top: -220px;
-    transform: none !important;
-    width: auto !important;
-    width: 100%;
-    max-width: 280px;
-    margin: 1rem auto;
-    display: block;
-  }
-
-  .results-section{
-    position: relative;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0 auto;
-    box-sizing: border-box;
-    /* overflow-x: auto; */
-  }
-
-  .detailed-steps img {
-    position: absolute;
-    width: 50%;
-    left: 150px;
-  }
-}
-
-/* Extra fixes for very small mobile */
-@media (max-width: 480px) {
-  .cube-net {
-    transform: scale(0.6) !important;
-    margin: 0.5rem 0;
-  }
-  
-  .input-section {
-    padding: 0.5rem;
-  }
-  
-  .results-section {
-    margin-top: 1rem;
-    padding: 1rem;
-  }
-  
-  .control-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .noir-btn, .noir-btnn {
-    width: 150px;
-    padding: 10px 20px;
-  }
-  
-  .solve-button {
-    max-width: 200px;
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-/* Landscape mobile fix */
-@media (max-height: 600px) and (orientation: landscape) {
-  .main-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  
-  .cube-net {
-    transform: scale(0.5) !important;
-    margin: 0.5rem 0;
-  }
-  
-  .header {
-    padding: 0.5rem;
-  }
-  
-  .heading-text {
-    font-size: 1.5rem;
-  }
-}
-
-/* Ensure proper stacking order */
-@media (max-width: 768px) {
-  .input-section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .input-section > * {
-    width: 100%;
-    max-width: 400px;
-    align-self: center;
-  }
-  
-  /* Specific ordering for input section children */
-  .control-buttons { order: 1; }
-  .cube-net { order: 2; }
-  .color-palette-wrapper { order: 3; }
-  .solve-button { order: 4; }
-}
+     grid-template-rows: auto auto;
+      gap: 1rem; padding: 1rem;
+      
+     } 
+     .input-section { 
+      position: static !important;
+       top: 0 !important; 
+       order: 1; 
+       display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        height: 800px; 
+        min-height: 0 !important; 
+        padding: 0 !important; 
+        margin: 0 !important; 
+      } 
+      .results-section { 
+        order: 2;
+         width: 100%; 
+         margin-top: 
+         2rem; 
+        } 
+        /* Fix cube net positioning */ 
+        .cube-net { 
+          position: relative !important; 
+          bottom: 0px ; 
+          top: -105px; 
+          transform: scale(0.7); 
+          margin: 1rem 0; 
+          order: 2; 
+        } 
+        /* Control buttons above cube */ 
+        .control-buttons { 
+          order: 1; 
+          display: flex; 
+          flex-direction: row; 
+          justify-content: center;
+           gap: 1rem; 
+           margin: 1rem 0; 
+           height: auto !important; 
+           width: auto !important;
+            position: relative;
+             right: 15px ;
+             } 
+             .noir-btn, .noir-btnn {
+               position: static !important;
+                right: auto !important;
+                 top: auto !important; 
+                 margin-bottom: 10px;
+                  /* margin: 0; */ 
+                } 
+                  /* Color palette below cube */ 
+                  .color-palette-wrapper { 
+                    order: 3; 
+                    position: relative !important;
+                     bottom: 0 !important; 
+                     top: -225px; 
+                     margin: 1rem 0; 
+                    } /* Solve button below color palette */ 
+                    .solve-button { 
+                      order: 4; 
+                      position: relative !important; 
+                      left: 0 !important; 
+                      bottom: 0 !important;
+                       top: -220px; 
+                       transform: none !important; 
+                       width: auto !important;
+                        width: 100%; 
+                        max-width: 280px;
+                         margin: 1rem auto;
+                          display: block; 
+                        } 
+                        .results-section{
+                           position: relative; 
+                           width: 100%; 
+                           left: 0;
+                            right: 0;
+                             bottom: 0;
+                             margin: 0 auto;
+                              box-sizing: border-box; 
+                              overflow-x: auto; 
+                            } 
+                            .detailed-steps img { 
+                              position: absolute;
+                               width: 50%; 
+                               left: 150px; 
+                              } 
+                            } 
+                            /* Extra fixes for very small mobile */
+     @media (max-width: 480px) 
+    { .cube-net { 
+       transform: scale(0.6) !important; 
+     margin: 0.5rem 0; } 
+      .input-section { padding: 0.5rem; } 
+  .results-section { 
+    margin-top: 1rem; 
+    padding: 1rem; } 
+    .control-buttons { 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 0.5rem; 
+    } 
+    .noir-btn, .noir-btnn 
+    { width: 150px; 
+      padding: 10px 20px; 
+    } 
+    .solve-button { 
+      max-width: 200px;
+       font-size: 1rem;
+        padding: 0.6rem 1rem; 
+      }
+     } 
+     /* Landscape mobile fix */ 
+     @media (max-height: 600px) and (orientation: landscape) {
+       .main-grid { 
+        grid-template-columns: 1fr 1fr !important; 
+      } 
+      .cube-net { 
+        transform: scale(0.5) !important;
+         margin: 0.5rem 0; 
+        } 
+        .header { 
+          padding: 0.5rem; 
+        } 
+        .heading-text {
+           font-size: 1.5rem;
+           } 
+          }
+           /* Ensure proper stacking order */ 
+           @media (max-width: 768px) { 
+            .input-section { 
+              display: flex;
+               flex-direction: column;
+               } 
+               .input-section > * {
+                 width: 100%; 
+                 max-width: 400px; 
+                 align-self: center;
+                 }
+                  /* Specific ordering for input section children */ 
+                  .control-buttons { 
+                    order: 1; 
+                  } 
+                  .cube-net { 
+                    order: 2; 
+                  } 
+                  .color-palette-wrapper {
+                     order: 3; 
+                    } 
+                    .solve-button { 
+                      order: 4; 
+                    } 
+                          }

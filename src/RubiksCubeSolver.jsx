@@ -270,7 +270,9 @@ useEffect(() => {
             </div>
           )} */}
         </div>
+        
 
+       
         <div className="main-grid">
           {/* Input Section */}
           <div className="input-section">
@@ -300,6 +302,7 @@ useEffect(() => {
             </div>
 
             {/* Cube Faces */}
+            
             <div className="cube-net">
              <div className="cube-face top">
               {renderFace('U', cubeState.U)}
@@ -325,6 +328,7 @@ useEffect(() => {
                {renderFace('D', cubeState.D)}
                 </div>
                 </div>
+        
 
              {/* Color Palette */}
              <div className="color-palette-wrapper">
@@ -428,7 +432,8 @@ useEffect(() => {
             )}
           </div>
         </div>
-      </div>
+        </div>
+
   //</div>
   );
 };
