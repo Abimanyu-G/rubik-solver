@@ -262,8 +262,8 @@ useEffect(() => {
       <div className="main-wrapper">
         {/* Header */}
         <div className="header">
-          <h1>Rubik's Cube Solver</h1>
-          <p>Easy Cube!</p>
+          <h1 className='heading-text'>Rubik<span style={{fontFamily:"monospace"}}>'</span>s  Cube  Solver</h1>
+          <p>Easy Cube! <a href='https://www.linkedin.com/in/abimanyu-gjohn/' className='follow'>Follow me</a></p>
           {/* {isCubeSolved() && (
             <div style={{marginTop: '10px', fontSize: '1.2em'}}>
               ✅ Cube is in solved state!
@@ -350,9 +350,9 @@ useEffect(() => {
               onClick={solveCube}
               disabled={isLoading}
               className="solve-button"
-              title="Find solution for current cube configuration"
+              title="Find solution for current cube"
             >
-              {isLoading ? ' Solving...' : 'Solve Cube'}
+              {isLoading ? ' Solving...' : 'Solve the Cube'}
             </button>
           </div>
 
@@ -396,8 +396,9 @@ useEffect(() => {
                     </div>
                   </div>
                   {solution.steps && solution.steps.length > 0 && (
-                    <div>
+                    <div className="detailed-steps">
                       <p className="solution-steps-title">Follow the Steps to Solve:</p>
+                      <img src="funnygif.webp" alt=":)" />
                       <ol className="solution-steps">
                         {solution.steps.map((step, index) => (
                           <li key={index} className="solution-step">

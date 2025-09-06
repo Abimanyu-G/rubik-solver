@@ -1,6 +1,8 @@
 /* Rubik's Cube Solver Styles */
 
 /* Reset and Base Styles */
+@import '/src/fonts.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +19,20 @@ body {
   min-height: 100vh;
 }
 
+.heading-text {
+  font-family: 'Libertinus Keyboard', monospace;
+  font-size: 3rem !important;
+  text-shadow: #000 1px 1px 2px, #000 0 0 1em, #000 0 0 0.2em;
+} 
+
+.follow{
+  margin-left: 80px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
 /* Main Container */
-.cube-solver-container {
+.cube-solver-conainer {
   min-height: 100vh;
   background: linear-gradient(135deg, #9333ea, #3b82f6, #1e40af);
   padding: 1.5rem;
@@ -49,12 +63,30 @@ body {
   margin: 0;
 }
 
-.cube-face.top { grid-area: top; }
-.cube-face.left { grid-area: left; }
-.cube-face.front { grid-area: front; }
-.cube-face.right { grid-area: right; }
-.cube-face.back { grid-area: back; }
-.cube-face.bottom { grid-area: bottom; }
+.cube-face.top { 
+  grid-area: top; 
+  box-shadow: 0 0 16px 4px rgba(128,128,128,0.45);
+}
+.cube-face.left { 
+  grid-area: left; 
+  box-shadow: 0 0 16px 4px rgba(128,128,128,0.45);
+}
+.cube-face.front { 
+  grid-area: front; 
+  box-shadow: 0 0 16px 4px rgba(128,128,128,0.45);
+}
+.cube-face.right { 
+  grid-area: right; 
+  box-shadow: 0 0 16px 4px rgba(128,128,128,0.45);
+}
+.cube-face.back { 
+  grid-area: back; 
+  box-shadow: 0 0 16px 4px rgba(128,128,128,0.45);
+}
+.cube-face.bottom { 
+  grid-area: bottom; 
+  box-shadow: 0 0 16px 4px rgba(128,128,128,0.45);
+}
 
 .face-grid {
   display: flex;
@@ -95,12 +127,16 @@ body {
 }
 
 .face-center-label{
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
   font-size: 1em;
   color: rgb(0, 0, 0);
   text-align: center;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 22px;
-  left: 4px;
+  left: 12px;
   pointer-events: none;
 }
 
@@ -150,6 +186,7 @@ body {
 
 .section-title {
   font-size: 1.5rem;
+  font-family: 'Libertinus Keyboard', monospace;
   font-weight: bold;
   margin-bottom: 1.5rem;
   color: #ffffff;
@@ -167,6 +204,7 @@ body {
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: #ffffff;
+  font-size: 1.125rem;
 }
 
 .color-palette {
@@ -232,32 +270,6 @@ body {
 .reset-btn:hover {
   background: #4b5563;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-/* Solve Button */
-.solve-button {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  font-size: 1.125rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 0.75rem;
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: linear-gradient(90deg, #10b981, #3b82f6);
-  position: relative;
-  bottom: 155px;
-}
-
-.solve-button:hover {
-  background: linear-gradient(90deg, #059669, #2563eb);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.solve-button:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
 }
 
 /* Results Section */
@@ -347,7 +359,8 @@ body {
 }
 
 .solution-stats {
-  color: #059669;
+  color: #ffffffd8;
+  font-family: "Fjalla One", sans-serif;
 }
 
 .solution-moves {
@@ -362,20 +375,30 @@ body {
 }
 
 .solution-steps-title {
+  /* font-family: "Fjalla One", sans-serif; */
   font-weight: 600;
-  color: #059669;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .solution-steps {
+  position: relative;
   list-style: decimal;
   padding-left: 3rem;
 }
 
 .solution-step {
-  color: #059669;
+  color: #ffffff;
+  font-family: "Epunda Slab", serif;
+  font-weight: 500;
   font-family: 'Courier New', monospace;
   margin-bottom: 0.25rem;
+}
+
+.detailed-steps img {
+  position: absolute;
+  left: 300px;
+  top: 270px;
 }
 
 /* Placeholder */

@@ -1,0 +1,68 @@
+/* Libertinus Keyboard */
+@font-face {
+  font-family: 'Libertinus Keyboard';
+  src: url('/src/font/LibertinusKeyboard-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Oswald (variable weights 200–700) */
+@font-face {
+  font-family: 'Oswald';
+  src: url('/src/font/Oswald-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Epunda Slab (italic + weight axis 300–900) */
+@font-face {
+  font-family: 'Epunda Slab';
+  src: url('/src/font/EpundaSlab-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Epunda Slab';
+  src: url('/src/font/EpundaSlab-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fjalla One */
+@font-face {
+  font-family: 'Fjalla One';
+  src: url('/src/font/FjallaOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sour Gummy (italic + weight axis 100–900) */
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('/src/font/SourGummy-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('/src/font/SourGummy-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('/src/font/SourGummy-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
