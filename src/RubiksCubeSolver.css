@@ -480,6 +480,8 @@ body {
     min-height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    overflow-x: auto;
+    overflow-y: auto;
     
   }
   .results-section {
@@ -496,8 +498,7 @@ body {
     transform: scale(0.7);
     margin: 1rem 0;
     order: 2;
-    overflow-x: auto;
-    overflow-y: auto;
+    
   }
   
   /* Control buttons above cube */
