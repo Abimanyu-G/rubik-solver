@@ -480,6 +480,7 @@ body {
     min-height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    overflow-x: auto;
   }
   .results-section {
     order: 2;
@@ -551,6 +552,7 @@ body {
     bottom: 0;
     margin: 0 auto;
     box-sizing: border-box;
+    overflow-x: auto;
   }
 
   .detailed-steps img {
